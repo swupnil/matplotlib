@@ -28,7 +28,8 @@ bp = ax.boxplot(data_to_plot, notch=False, sym='+', vert=True,whis=5/3,
                 positions=[2,4,6,8], widths=[2,2,2,2], patch_artist=True,
                 bootstrap=None, usermedians=None, conf_intervals=None)
 
-## Remove top axes and right axes ticks
-ax.get_xaxis().tick_bottom()
-ax.get_yaxis().tick_left()
+## PROBLEM: lower fence outside out of range of graph when sym=''
+data = list(range(0,100))+[200,-200,250,-250]
+bp = plt.boxplot(data,sym='',widths=.3)
+plt.show()
 
