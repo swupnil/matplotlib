@@ -23,10 +23,9 @@ fig = plt.figure(1, figsize=(9, 6))
 # Create an axes instance
 ax = fig.add_subplot(111)
 
-## add patch_artist=True option to ax.boxplot() 
-## to get fill color
-bp = ax.boxplot(data_to_plot, notch=False, sym='+', vert=True,whis=3,
-                positions=[1,4,5,6], widths=None, patch_artist=True,
+## PROBLEM: boxplot out of bounds of graph
+bp = ax.boxplot(data_to_plot, notch=False, sym='+', vert=True,whis=5/3,
+                positions=[2,4,6,8], widths=[2,2,2,2], patch_artist=True,
                 bootstrap=None, usermedians=None, conf_intervals=None)
 
 ## Remove top axes and right axes ticks
