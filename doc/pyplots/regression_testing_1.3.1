@@ -33,3 +33,9 @@ data = list(range(0,100))+[200,-200,250,-250]
 bp = plt.boxplot(data,sym='',widths=.3)
 plt.show()
 
+## PROBLEM: tries to plot usermedians along with bootstrap intervals
+## Should choose only one of these...
+bp = ax.boxplot(data_to_plot, notch=True, sym='r.', vert=False, whis=1.5,
+                positions=None, widths=None, patch_artist=False,
+                bootstrap=1000, usermedians=[102,85,90,75], conf_intervals=None)
+
